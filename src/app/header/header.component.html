@@ -1,0 +1,82 @@
+<header id="header" class="head">
+   
+    <div class="container main-menu">
+      <div class="row align-items-center justify-content-between d-flex" >
+      <a href="index.html"><img class="logo" src="/assets/img/logo.PNG" alt="" title="" /></a>		
+      <nav id="mobile">
+      <ul class="nav-menu">
+        <li class="menu-active"> <span style="font-size:30px;cursor:pointer;" (click)="openNav()">&#9776; open</span><li>
+  
+      </ul>
+    </nav>
+      <nav id="nav-menu-container">
+      <ul class="nav-menu">
+          <li class="menu-active">
+              <a   routerLink="/userDetails" *ngIf="securityObject.isAuthinticated"
+               class="docs-navbar-hide-small docs-button mat-button ng-star-inserted pointer"
+               mat-button="" tabindex="0" aria-disabled="false">
+                <span class="mat-button-wrapper font">{{ securityObject.userName}}</span>
+                <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                <div class="mat-button-focus-overlay"></div></a>
+          </li>
+        <li class="menu-active">
+            <a  *ngIf="!securityObject.isRoleAdmin"  href="index.html"
+            class="docs-navbar-hide-small docs-button mat-button ng-star-inserted pointer"
+            mat-button="" tabindex="0" aria-disabled="false">
+             <span class="mat-button-wrapper font">Home</span>
+             <div class="mat-button-ripple mat-ripple" matripple=""></div>
+             <div class="mat-button-focus-overlay"></div></a>
+          
+          
+          
+          </li>
+        <li class="menu-active">
+            <a  routerLink="/myBooking" *ngIf="securityObject.isAuthinticated && !securityObject.isRoleAdmin"
+            class="docs-navbar-hide-small docs-button mat-button ng-star-inserted pointer"
+            mat-button="" tabindex="0" aria-disabled="false">
+             <span class="mat-button-wrapper font">MY Booking</span>
+             <div class="mat-button-ripple mat-ripple" matripple=""></div>
+             <div class="mat-button-focus-overlay"></div></a>
+          
+          
+          
+    
+        <li class="menu-active">
+            <a   class="pointer" routerLink="/login" *ngIf="!securityObject.isAuthinticated"
+            class="docs-navbar-hide-small docs-button mat-button ng-star-inserted pointer" 
+            mat-button="" tabindex="0" aria-disabled="false">
+             <span class="mat-button-wrapper font">Login</span>
+             <div class="mat-button-ripple mat-ripple" matripple=""></div>
+             <div class="mat-button-focus-overlay"></div></a>
+         </li>							  			          	          
+        <li class="menu-active">
+          
+            <a    routerLink="/register" *ngIf="!securityObject.isAuthinticated"
+             class="docs-navbar-hide-small docs-button mat-button ng-star-inserted pointer"
+              mat-button="" tabindex="0" aria-disabled="false" >
+              <span class="mat-button-wrapper font" >Register</span>
+              <div class="mat-button-ripple mat-ripple" matripple="">
+
+              </div><div class="mat-button-focus-overlay"></div></a>
+             </li>
+ 
+    <li class="menu-active" (click)="logout()">
+        <a   *ngIf="securityObject.isAuthinticated" href="index.html"
+        class="docs-navbar-hide-small docs-button mat-button ng-star-inserted pointer"
+         mat-button="" tabindex="0" aria-disabled="false" >
+         <span class="mat-button-wrapper font" >Logout</span>
+         <div class="mat-button-ripple mat-ripple" matripple="">
+
+         </div><div class="mat-button-focus-overlay"></div></a>
+        
+      </li>
+       </ul>
+      </nav>
+      
+      </div>
+    </div>
+    
+    </header>
+    
+
+   

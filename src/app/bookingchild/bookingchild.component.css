@@ -1,0 +1,52 @@
+.fare-chart{
+    text-align: center;
+    -webkit-text-fill-color: black;
+    text-decoration: black;
+    -webkit-text-stroke-width: 0.10em;
+    display: inline;
+    float: none;
+}
+.heading{
+    text-align: center;
+    -webkit-text-fill-color: black;
+    text-decoration: black;
+    -webkit-text-stroke-width: 0.10em;
+
+}
+.footing{
+    text-align: center;
+    -webkit-text-fill-color: black;
+    text-decoration: black;
+    -webkit-text-stroke-width: 0.04em;
+
+}
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 0%;
+}
+.col-6{
+    padding: 0%;
+}
+.small{
+    -webkit-text-stroke-width: 0.06em; 
+}
+.mat-form-field-infix{
+    width:260px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 80%;
+  }
+ 
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  

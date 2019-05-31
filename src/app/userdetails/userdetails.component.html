@@ -1,0 +1,66 @@
+<mat-card class="banner-content fare col-lg-4 col-md-6 header-right">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+       </mat-card-header>
+      <mat-card-content>
+     
+ 
+  
+  <div class="row fare-chart">
+  
+    <div class="col-6 fare-chart">
+       <span> {{user.userName}}</span>
+    </div>
+  </div>
+  
+  <mat-divider style="margin-bottom:5px;"></mat-divider>
+ 
+  <div class="row">
+  <div class="col-3">
+    <span class="footing">PHONE:</span>
+    </div>
+    <div class="col-9">
+      <span class="footing">{{user.userPhoneNumber}}</span>
+      </div>
+   
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <span class="footing">EMAIL:</span>
+      </div>
+      <div class="col-9">
+        <span class="footing">{{user.userEmail}}</span>
+        </div>
+     
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <span class="footing">ID:</span>
+        </div>
+        <div class="col-9">
+           
+          <!-- <span [hidden]="!booking.roundTrip" class="footing">{{km}} KM  ({{km/2}}X2)</span> -->
+          <span  class="footing">{{user.userId}}</span>
+          </div>
+       
+      </div>
+    
+  <mat-divider style="margin-bottom:5px;"></mat-divider>
+ 
+ 
+  
+
+    
+       
+   
+  
+
+
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
+    
+    </mat-card-actions>
+  </mat-card>

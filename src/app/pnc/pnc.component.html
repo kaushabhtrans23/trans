@@ -1,0 +1,378 @@
+<div class="container-fluid" >
+    <h4 class="pb-30">PACKERS AND MOVERS!</h4>
+    <div *ngIf='page1'>
+    <form class="form" >
+      <div class="from-group">
+        <mat-radio-group [(ngModel)]="pnm.withinCity" name="withinCity" aria-label="Select an option">
+          <mat-radio-button [value]=true>Within the City</mat-radio-button>
+          <mat-radio-button [value]=false>Between Cities</mat-radio-button>
+        </mat-radio-group>
+       
+      </div>
+     
+     <div class="space"></div>
+<div class="border">
+<div class="row">
+      <div class="form-group col-12">
+        <mat-form-field class="example-full-width">
+          <input matInput  placeholder="FROM ADDRESS" ngx-google-places-autocomplete
+            name="start" id='start' [options]="{
+                  types: [],
+                  componentRestrictions: { country: 'IN' },
+                  style:[]   
+                  }" (onAddressChange)="handleAddressChange($event,'start')" />
+                </mat-form-field>
+       </div>
+      </div>
+       <div class="row">
+          <div class="form-group col-2"></div>
+       <div class="form-group col-4">
+                <mat-form-field class="example-full-width">
+                    <input matInput [(ngModel)]="pnm.toFloorNo" placeholder="Floor no" name="Floor">
+                  </mat-form-field>
+        </div>
+            <div class="col-4"><mat-checkbox name="serviceliftto" [(ngModel)]="pnm.toServiceLift" >Service Lift</mat-checkbox></div>
+      
+</div>
+</div>
+<div class="space">
+</div>
+    <div class="border">
+      <div class="row">
+          <div class="form-group col-12">
+        <mat-form-field class="example-full-width">
+          <input matInput  placeholder="TO ADDRESS" ngx-google-places-autocomplete
+            name="end" id='ends' [options]="{
+                  types: [],
+                  componentRestrictions: { country: 'IN' },
+                  style:[
+                    ]   
+                  }" (onAddressChange)="handleAddressChange($event, 'end')" />
+                </mat-form-field>
+              </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-2"></div>
+              <div class="col-4">
+                  <mat-form-field class="example-full-width"> 
+                      <input matInput [(ngModel)]="pnm.fromFloorNo" placeholder="Floor no" name="Floor">
+                    </mat-form-field>
+              </div>
+              <div class="form-group col-4"><mat-checkbox name="fromservicelift" [(ngModel)]="pnm.fromServiceLift">Service Lift</mat-checkbox></div>
+    
+                   
+                  </div>
+     </div>
+     <div class="space"></div>
+      <div >
+        <mat-form-field class="example-full-width">
+
+          <input [min]="min" name="y" [(ngModel)]="pnm.date" matInput placeholder="DATE" 
+            [owlDateTimeTrigger]="dtRange4" [owlDateTime]="dtRange4">
+
+        </mat-form-field>
+        <span [owlDateTimeTrigger]="dtRange4"><i class="fa fa-calendar"></i></span>
+        <owl-date-time #dtRange4 [pickerMode]="popup"></owl-date-time>
+
+
+      </div>
+  
+     
+    </form>
+    <div class="border details row">
+      <span class="col-1"></span> <span class="col-11"> If your building has a working Service Lift it will reduce the overall quote value.
+       </span>
+      </div>
+      <div class="space"></div>
+      <div class="border details row">
+          <span class="col-1"></span> <span class="col-11"> Reach out to us at <a href="#"> +91 8530312323 </a>for any issue. We’re all ears!
+           </span>
+          </div>
+  </div>
+  <div [hidden]="!page2">
+      <div class="border details row">
+        <div class="col-2 border border1 pointer" id="1rk" (click)='display("1RK")'>1 RK</div><div class="spacehorizontal"></div>
+        <div class="col-2 border pointer" id="1bhk" (click)='display("1BHK")'>1 BHK</div><div class="spacehorizontal"></div>
+        <div class="col-2 border pointer" id="2bhk" (click)='display("2BHK")'>2 BHK</div><div class="spacehorizontal"></div>
+        <div class="col-2 border pointer" id="3bhk" (click)='display("3BHK")'>3 BHK</div><div class="spacehorizontal"></div>
+      </div>
+      <div class="space"></div>
+      <div class="space"></div>
+      <div *ngIf="rk1" class="1RK">
+      <div class='1RKlight'>
+          <div class="border details">
+              <div class="row">
+              <div class="col-2"><mat-checkbox [(ngModel)]="rklite" (change)="changecheckbox('rklite')">1RK LITE</mat-checkbox></div>
+              </div>
+              <div class="space"></div>
+              <div class="row">
+                  <div class="col-8">Appliances you can fit</div>
+                  </div>
+                  <div class="row">
+                      <div class="col-12"> 
+                        <mat-form-field class="example-chip-list example-full-width">
+                          <mat-chip-list #chipList>
+                            <mat-chip  selected *ngFor="let item of items" [selectable]="selectable"
+                                     [removable]="removable" (removed)="remove(item,items)">
+                              {{item.name}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            <input placeholder="Add New Items..."
+                                   [matChipInputFor]="chipList"
+                                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                   [matChipInputAddOnBlur]="addOnBlur"
+                                   (matChipInputTokenEnd)="add($event,items)">
+                          </mat-chip-list>
+                        </mat-form-field>
+                      </div>
+
+                      
+                      </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class='1RKheavy'>
+          <div class="border details">
+              <div class="row">
+              <div class="col-2"><mat-checkbox [(ngModel)]="rkheavy" (change)="changecheckbox('rkheavy')">1RK HEAVY</mat-checkbox></div>
+              </div>
+              <div class="space"></div>
+              <div class="row">
+                  <div class="col-8">Appliances you can fit</div>
+                  </div>
+                  <div class="row">
+                      <div class="col-12"> 
+                        <mat-form-field class="example-chip-list example-full-width">
+                          <mat-chip-list #chipList1>
+                            <mat-chip  selected *ngFor="let item of items1rkheavy" [selectable]="selectable"
+                                     [removable]="removable" (removed)="remove(item,items1rkheavy)">
+                              {{item.name}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            <input placeholder="Add New Items..."
+                                   [matChipInputFor]="chipList1"
+                                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                   [matChipInputAddOnBlur]="addOnBlur"
+                                   (matChipInputTokenEnd)="add($event,items1rkheavy)">
+                          </mat-chip-list>
+                        </mat-form-field>
+                      </div>
+
+                      
+                      </div>
+            </div>
+        </div>
+        </div>
+        <!-- 1BHK -->
+
+        <div *ngIf="bhk1" class="1BHK">
+          <div class='1BHKlight'>
+              <div class="border details">
+                  <div class="row">
+                  <div class="col-2"><mat-checkbox [(ngModel)]="onebhklite" (change)="changecheckbox('onebhklite')">1BHK LITE</mat-checkbox></div>
+                  </div>
+                  <div class="space"></div>
+                  <div class="row">
+                      <div class="col-8">Appliances you can fit</div>
+                      </div>
+                      <div class="row">
+                          <div class="col-12"> 
+                            <mat-form-field class="example-chip-list example-full-width">
+                              <mat-chip-list #chipList>
+                                <mat-chip  selected *ngFor="let item of items1bhklite" [selectable]="selectable"
+                                         [removable]="removable" (removed)="remove(item,items1bhklite)">
+                                  {{item.name}}
+                                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                                <input placeholder="Add New Items..."
+                                       [matChipInputFor]="chipList"
+                                       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                       [matChipInputAddOnBlur]="addOnBlur"
+                                       (matChipInputTokenEnd)="add($event,items1bhklite)">
+                              </mat-chip-list>
+                            </mat-form-field>
+                          </div>
+    
+                          
+                          </div>
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class='1BHKheavy'>
+              <div class="border details">
+                  <div class="row">
+                  <div class="col-2"><mat-checkbox [(ngModel)]="onebhkheavy" (change)="changecheckbox('onebhkheavy')">1BHK HEAVY</mat-checkbox></div>
+                  </div>
+                  <div class="space"></div>
+                  <div class="row">
+                      <div class="col-8">Appliances you can fit</div>
+                      </div>
+                      <div class="row">
+                          <div class="col-12"> 
+                            <mat-form-field class="example-chip-list example-full-width">
+                              <mat-chip-list #chipList1>
+                                <mat-chip  selected *ngFor="let item of items1bhkheavy" [selectable]="selectable"
+                                         [removable]="removable" (removed)="remove(item,items1bhkheavy)">
+                                  {{item.name}}
+                                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                                <input placeholder="Add New Items..."
+                                       [matChipInputFor]="chipList1"
+                                       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                       [matChipInputAddOnBlur]="addOnBlur"
+                                       (matChipInputTokenEnd)="add($event,items1bhkheavy)">
+                              </mat-chip-list>
+                            </mat-form-field>
+                          </div>
+    
+                          
+                          </div>
+                </div>
+            </div>
+            </div>
+            <!-- 2BHK-->
+            <div *ngIf="bhk2" class="2BHK">
+              <div class='2BHKlight'>
+                  <div class="border details">
+                      <div class="row">
+                      <div class="col-2"><mat-checkbox [(ngModel)]="twobhklite" (change)="changecheckbox('twobhklite')">2BHK LITE</mat-checkbox></div>
+                      </div>
+                      <div class="space"></div>
+                      <div class="row">
+                          <div class="col-8">Appliances you can fit</div>
+                          </div>
+                          <div class="row">
+                              <div class="col-12"> 
+                                <mat-form-field class="example-chip-list example-full-width">
+                                  <mat-chip-list #chipList>
+                                    <mat-chip   *ngFor="let item of items2bhklite" [selectable]="selectable"
+                                             [removable]="removable" (removed)="remove(item,items2bhklite)">
+                                      {{item.name}}
+                                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                    </mat-chip>
+                                    <input placeholder="Add New Items..."
+                                           [matChipInputFor]="chipList"
+                                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                           [matChipInputAddOnBlur]="addOnBlur"
+                                           (matChipInputTokenEnd)="add($event,items2bhklite)">
+                                  </mat-chip-list>
+                                </mat-form-field>
+                              </div>
+        
+                              
+                              </div>
+                    </div>
+                </div>
+                <div class="space"></div>
+                <div class='2BHKheavy'>
+                  <div class="border details">
+                      <div class="row">
+                      <div class="col-2"><mat-checkbox [(ngModel)]="twobhkheavy" (change)="changecheckbox('twobhkheavy')">2BHK HEAVY</mat-checkbox></div>
+                      </div>
+                      <div class="space"></div>
+                      <div class="row">
+                          <div class="col-8">Appliances you can fit</div>
+                          </div>
+                          <div class="row">
+                              <div class="col-12"> 
+                                <mat-form-field class="example-chip-list example-full-width">
+                                  <mat-chip-list #chipList1>
+                                    <mat-chip  selected *ngFor="let item of items2bhkheavy" [selectable]="selectable"
+                                             [removable]="removable" (removed)="remove(item,items2bhkheavy)">
+                                      {{item.name}}
+                                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                    </mat-chip>
+                                    <input placeholder="Add New Items..."
+                                           [matChipInputFor]="chipList1"
+                                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                           [matChipInputAddOnBlur]="addOnBlur"
+                                           (matChipInputTokenEnd)="add($event,items2bhkheavy)">
+                                  </mat-chip-list>
+                                </mat-form-field>
+                              </div>
+        
+                              
+                              </div>
+                    </div>
+                </div>
+                </div>
+                <!-- 3BHK-->
+                <div *ngIf="bhk3" class="3BHK">
+                  <div class='3BHKlight'>
+                      <div class="border details">
+                          <div class="row">
+                          <div class="col-2"><mat-checkbox [(ngModel)]="threebhklite" (change)="changecheckbox('threebhklite')">3 BHK LITE</mat-checkbox></div>
+                          </div>
+                          <div class="space"></div>
+                          <div class="row">
+                              <div class="col-8">Appliances you can fit</div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12"> 
+                                    <mat-form-field class="example-chip-list example-full-width">
+                                      <mat-chip-list #chipList>
+                                        <mat-chip  selected *ngFor="let item of items3bhklite" [selectable]="selectable"
+                                                 [removable]="removable" (removed)="remove(item,items3bhklite)">
+                                          {{item.name}}
+                                          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                        </mat-chip>
+                                        <input placeholder="Add New Items..."
+                                               [matChipInputFor]="chipList"
+                                               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                               [matChipInputAddOnBlur]="addOnBlur"
+                                               (matChipInputTokenEnd)="add($event,items3bhklite)">
+                                      </mat-chip-list>
+                                    </mat-form-field>
+                                  </div>
+            
+                                  
+                                  </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                    <div class='3BHKheavy'>
+                      <div class="border details">
+                          <div class="row">
+                          <div class="col-2"><mat-checkbox [(ngModel)]="threebhkheavy" (change)="changecheckbox('threebhkheavy')">3 BHK HEAVY</mat-checkbox></div>
+                          </div>
+                          <div class="space"></div>
+                          <div class="row">
+                              <div class="col-8">Appliances you can fit</div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12"> 
+                                    <mat-form-field class="example-chip-list example-full-width">
+                                      <mat-chip-list #chipList1>
+                                        <mat-chip  selected *ngFor="let item of items3bhkheavy" [selectable]="selectable"
+                                                 [removable]="removable" (removed)="remove(item,items3bhkheavy)">
+                                          {{item.name}}
+                                          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                        </mat-chip>
+                                        <input placeholder="Add New Items..."
+                                               [matChipInputFor]="chipList1"
+                                               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                               [matChipInputAddOnBlur]="addOnBlur"
+                                               (matChipInputTokenEnd)="add($event,items3bhkheavy)">
+                                      </mat-chip-list>
+                                    </mat-form-field>
+                                  </div>
+            
+                                  
+                                  </div>
+                        </div>
+                    </div>
+                    </div>
+      </div>
+  <div class="space"></div>
+  
+  <div class="row">
+      <div class="col-6 button"><button  *ngIf='!page1' mat-stroked-button color="primary" class="btn-block" (click)="changepage('back')" >BACK</button>
+      </div>
+    <div class="col-6 button">
+          <button mat-stroked-button *ngIf='!page3'  color="primary" class="btn-block" (click)="changepage('next')" >NEXT</button>
+          <button mat-stroked-button *ngIf='page3'  color="primary" class="btn-block" (click)="submit()" >SUBMIT</button>
+   
+
+    </div>
+        
+    </div>

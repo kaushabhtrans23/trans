@@ -1,0 +1,248 @@
+.pac-container, .pac-item {
+    width: inherit !important;
+    background-color: black;
+    
+}
+.bg{
+  height: 100%;
+      position:relative;
+      background: url(/assets/img/header-bg.PNG) center; 
+  /* background-size: cover;
+  height: -webkit-fill-available; */
+}
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .banner-content{
+    padding-top: 0px;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;}
+    .map {
+      height: 100%;
+      position:static;
+    }
+    .map1{
+      
+        height: 520px;
+        position:static;
+      
+    }
+  
+    .fare{
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-right: 0px;
+      padding-left: 0px;
+      }
+      .mat-form-field-infix{
+        width:260px;
+      }
+      .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+      
+      .example-full-width {
+        width: 80%;
+      }
+      ul#menu li {
+        display:inline;
+      }
+     .btn{
+       margin-left: 5px;
+       margin-right: 5px;
+       padding-left: 0px;
+       padding-right: 0px;
+       padding-top: 0px;
+       padding-bottom: 0px;
+     }
+     .homeimg{
+       height: 400px;
+       width:400px;
+     }
+     .mat-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+    }
+    img{
+      width: 40px;
+      height: 45px;
+    }
+    
+  
+
+
+/*TEAT*/
+    .area {
+      width: 100%;
+      height: 50%;
+      position: relative;
+      top: 700px;
+      overflow: hidden;
+    }
+    
+    .car {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: moveAcross 4s linear infinite;
+      /*animation-play-state: paused;*/
+    }
+    .car-1 {
+      fill: red;
+      animation-delay: -1s;
+      animation-duration: 10s;
+    }
+    .car-2 {
+      fill: blue;
+      top: 10px;
+      animation-delay: -2s;
+      animation-duration: 6s;
+    }
+    .car-3 {
+      fill: green;
+      top: 20px;
+      animation-delay: -3s;
+      animation-duration: 8s;
+    }
+    .car-4 {
+      width:80px;
+      height: 80px;
+      animation-delay: -5s;
+      animation-duration: 8s;
+    }
+    
+    @keyframes moveAcross {
+      0% {
+        left: -300px;
+      }
+      100% {
+        left: 110%;
+      }
+    }
+    
+
+
+
+
+
+
+
+    .split {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+      width: -webkit-fill-available;
+    background-color:  white;
+
+    }
+    .slider{
+     padding-top: 72px;
+     padding-left: 0px;
+      
+      width:-webkit-fill-available;;
+      height:70%;
+    
+    }
+    .slider div{
+      height: 100%;
+      width: 100%;
+    }
+    .slider div img{
+      height: 100%;
+      width: 100%;
+    }
+    /* Control the left side */
+    .left {
+      left: 0;
+      background-color:  white;
+    }
+    .innercontent{
+    padding-left: 37%;
+    }
+    /* Control the right side */
+    .right {
+      right: 0;
+      /* background-color:  #6A1B9A; */
+      background-color: white;
+
+
+    }
+   
+    
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+      background-color: white;
+      height:60%;
+      width: 60%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      -webkit-box-shadow: 0 0 10px rgb(225, 4, 245);
+      -moz-box-shadow: 0 0 10px rgb(225, 4, 245);
+      border-radius: 10%;
+      cursor: pointer;
+    }
+   .centered:hover{
+    -webkit-box-shadow: 0 0 30px rgb(225, 4, 245);
+    -moz-box-shadow: 0 0 30px rgb(225, 4, 245);
+    }
+    
+    /* Style the image inside the centered container, if needed */
+    .centered img {
+      width: 70%;
+      height: 70%;
+     
+    }
+    .rt{
+      height:70%;
+    }
+   
+  @media(max-width:991px){
+    .slider{
+      padding-top: 72px;
+      padding-left: 0px;
+      width: -webkit-fill-available;
+       
+       height:70%;
+       overflow:hidden;
+     }
+  }
+      
+    @media (max-width: 991px) {  
+   #comingsoon {
+          background: url(/assets/img/1234.jpg) center;
+        
+        background-repeat: no-repeat;
+        
+   }
+        }
+      
+       @media (min-width: 991px) {
+        #comingsoon {
+          background: url(/assets/img/123.jpg) center;
+        
+          background-repeat: no-repeat;
+      }
+      } 
+.carousel{
+height:500px;
+width:500px;
+}
+
+      app-pnc{
+      height: 100%;
+      }

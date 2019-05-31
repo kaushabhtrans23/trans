@@ -1,0 +1,349 @@
+<!-- start banner Area -->
+
+<section class="banner-area" id="home">
+ <div class="overlay overlay-bg">
+    <!--Animation TEST -->
+ <div class="area"  style="display: none;">
+  <svg>
+  <symbol viewBox="-3.456 0 96 99.818" id="car">
+    <desc>car</desc>
+      <path d="M16.87,54.115c-3.729,0-6.752,3.022-6.752,6.753c0,3.729,3.023,6.752,6.752,6.752   c3.729,0,6.752-3.022,6.752-6.752C23.622,57.137,20.598,54.115,16.87,54.115z M16.87,64.756c-2.035,0-3.683-1.649-3.683-3.683   c0-2.035,1.648-3.684,3.683-3.684c2.034,0,3.684,1.648,3.684,3.684C20.553,63.106,18.904,64.756,16.87,64.756z"/>
+      <path d="M86.031,44.906c-4.911,0-22.099-1.842-22.099-1.842L54.724,30.15c0,0-46.039-4.741-55.043,30.259h6.856   c0-5,4.626-10.333,10.333-10.333c5.708,0,10.333,5.333,10.334,10.333h32.125c0.002-5,4.626-10.333,10.333-10.333   c5.708,0,10.333,5.333,10.334,10.333h4.398l4.912-12.458C89.306,47.951,90.943,44.906,86.031,44.906z M24.646,37.54   c10.64-5.116,29.465-4.092,29.465-4.092l6.957,9.617C61.068,43.064,14.004,42.656,24.646,37.54z"/>
+      <path d="M69.662,54.115c-3.729,0-6.752,3.022-6.752,6.753c0,3.729,3.023,6.752,6.752,6.752s6.753-3.022,6.753-6.752   C76.415,57.137,73.39,54.115,69.662,54.115z M69.662,64.756c-2.035,0-3.683-1.649-3.683-3.683c0-2.035,1.647-3.684,3.683-3.684   s3.684,1.648,3.684,3.684C73.345,63.106,71.697,64.756,69.662,64.756z"/>
+  </symbol>
+  
+  </svg> 
+  </div>
+  
+  <div class="area">
+    <svg class="car car-1">
+      <use xlink:href="#car" />
+    </svg>
+    <svg class="car car-2">
+      <use xlink:href="#car" />
+    </svg>
+    <svg class="car car-3">
+      <use xlink:href="#car" />
+    </svg>
+    <div class="car car-4" style="height: 80px; width: 80px;"><img src="/assets/img/mini.png" alt="Mini"/></div>
+  </div>
+
+
+
+   
+  </div> 
+  <!--Animation TEST -->
+   <!--POSTER TEST -->
+   <div  [hidden]="Posterhidden">
+     
+
+  
+     <div class="row split">
+        <div class="row slider">
+            <div class="col-12">
+              <!-- <img src="/assets/img/pnc.gif" > -->
+
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                 
+                  <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                  </ol>
+              
+                
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="/assets/img/pnc.gif" alt="Los Angeles" style="width:100%;">
+                    </div>
+              
+                    <div class="item">
+                      <img src="/assets/img/o.jpg" alt="Chicago" style="width:100%;">
+                    </div>
+                  
+                    <div class="item">
+                      <img src="/assets/img/p.jpg" alt="New york" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/img/new.png" alt="New york" style="width:100%;">
+                      </div>
+                      <div class="item">
+                          <img src="/assets/img/12345.jpg" alt="New york" style="width:100%;">
+                        </div>
+                  </div> 
+              
+                  <!-- Left and right controls -->
+                  <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                  </a> -->
+                </div> 
+          </div>
+          </div>
+       <div class="row innercontent">
+      
+      <div class="left col-6" >
+        
+          <div class="centered row" (click)='hideContainer("HOME")'>
+             <div class="col-12"> <img src={{cabicon}}></div>
+             <div class="col-12">
+              <h6>BOOK YOUR OUTSTATION CAB</h6></div> 
+           
+          </div>
+          
+        </div>
+        
+        <div class="right col-6" >
+          <div class="centered row" (click)='hideContainer("PNC")'>
+          <div class="col-12 rt"> <img src={{pnmicon}}></div>
+          <div class="col-12"> 
+            <h6>PACKERS AND MOVERS</h6></div> 
+            
+            </div>
+           
+          </div>
+        </div>
+      </div>
+  </div>
+  <!--POSTER TEST -->
+<!-- <div class="overlay overlay-bg" id='comingsoon'>
+</div>-->
+  <div class="container" [hidden]="pncHidden">
+
+     
+      <div  class="row fullscreen d-flex align-items-center justify-content-between" id="innercontent">
+          <app-pnc [hidden]="pncHidden" class="banner-content fare col-lg-8 col-md-12 header-right "></app-pnc>
+      </div>
+  </div>
+
+  <div class="container" [hidden]='homeHidden'>
+ <div></div>
+    <input type="hidden" id="km">
+    <div  class="row fullscreen d-flex align-items-center justify-content-between" id="innercontent">
+      <app-fare (bookingChange)="rideBooked($event)" [numberOfDays]="numberOfDays" [rateperkm]="ratePerKm" [booking]="Booking" [km]="km" [userId]="user.userId"
+        *ngIf="fareDetails" class="banner-content fare col-lg-6 col-md-6 header-right "></app-fare>
+        <div hidden class="homeimg"><img class="homeimg" src="/assets/img/home.gif"></div>
+
+
+        <div [hidden]="!rideDetails"  class="banner-content col-lg-8 col-md-6">
+          <mat-card>
+              <!-- <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>RIDE DETAILS</mat-card-title>
+                  
+                </mat-card-header> -->
+            <div class="map1" id="map"></div> 
+            <div type="hidden" id="output">
+            
+            </div>
+            <mat-card-content>
+               
+                    <div class="row">
+                      <div class="col-2"><span>START:</span></div>
+                      <div class="col-10" id="from"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-2"><span>END:</span></div>
+                        <div class="col-10" id="to"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-3"><span>ONE WAY DISTANCE:</span></div>
+                        <div class="col-8" id="kilometre"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-2"><span>TIME:</span></div>
+                        <div class="col-10" id="time"></div>
+                    </div>
+                
+              </mat-card-content>
+            
+            
+
+          </mat-card>
+          </div>
+
+
+      <!-- <div [hidden]="!rideDetails" class="modal" id="myModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <!-- Modal Header 
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>-->
+        
+              <!-- Modal body 
+              <div class="modal-body">
+                  <div id="map"></div>
+                  <div id="output"></div>
+              </div> -->
+        
+              <!-- Modal footer
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+        
+            </div>
+          </div>
+        </div> -->
+
+ 
+
+
+
+
+
+
+
+
+
+        <app-bookingchild (fare)="viewfare($event)" [booking]="Booking" [km]="km" [userId]="user.userId"
+        *ngIf="booked" class="banner-content fare col-lg-4 col-md-6 header-right "></app-bookingchild>
+        
+
+      <div *ngIf="!booked" class="col-lg-4  col-md-6 header-right">
+        <h4 class="pb-30">Book Your Taxi Online!</h4>
+        <form class="form">
+          <div class="from-group">
+              
+            <mat-radio-group [(ngModel)]="Booking.roundTrip" name="ride" aria-label="Select an option">
+              <mat-radio-button [value]=true>ROUND TRIP</mat-radio-button>
+              <mat-radio-button [value]=false>ONE WAY</mat-radio-button>
+            </mat-radio-group>
+          
+        
+            
+          </div>
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>SELECT CATOGERY</mat-label>
+            <mat-select [(ngModel)]="Booking.vehicle.category" name="select">
+              <mat-option  value="MINI">
+                MINI
+              </mat-option>
+              <mat-option  value="SEDAN">
+                SEDAN
+              </mat-option>
+              <mat-option  value="SUV">
+                SUV
+              </mat-option>
+              <mat-option  value="TRAVELLER">
+                TRAVELLER
+              </mat-option>
+              <mat-option  value="PACKERSMOVERS">
+                PACKERSMOVERS
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+         
+
+
+          <div class="form-group">
+            <mat-form-field class="example-full-width">
+              <input matInput class="form-control" placeholder="RIDE START ADDRESS" ngx-google-places-autocomplete
+                name="start" id='start' [options]="{
+                      types: [],
+                      componentRestrictions: { country: 'IN' },
+                      style:[]   
+                      }" (onAddressChange)="handleAddressChange($event,'start')" />
+                    </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="example-full-width">
+              <input matInput class="form-control" placeholder="RIDE END ADDRESS" ngx-google-places-autocomplete
+                name="end" id='ends' [options]="{
+                      types: [],
+                      componentRestrictions: { country: 'IN' },
+                      style:[
+                        ]   
+                      }" (onAddressChange)="handleAddressChange($event, 'end')" />
+                    </mat-form-field>
+          </div>
+
+          <div [hidden]=!Booking.roundTrip>
+            <mat-form-field class="example-full-width">
+
+              <input [min]="min" name="d" matInput placeholder="START DATE" [style.width]="'350px'"
+                [(ngModel)]="selectedDate" [selectMode]="'rangeFrom'" [owlDateTimeTrigger]="dtRange2"
+                [owlDateTime]="dtRange2" (dateTimeInput)="emitValue()">
+
+            </mat-form-field>
+            <span [owlDateTimeTrigger]="dtRange2"><i class="fa fa-calendar"></i></span>
+            <owl-date-time #dtRange2 [pickerMode]="popup"></owl-date-time>
+
+
+            <mat-form-field class="example-full-width">
+
+              <input [min]="minend" name="d" matInput placeholder="END DATE" [(ngModel)]="selectedDate"
+                [selectMode]="'rangeTo'" [owlDateTimeTrigger]="dtRange3" [owlDateTime]="dtRange3">
+
+
+            </mat-form-field>
+            <span [owlDateTimeTrigger]="dtRange3"><i class="fa fa-calendar"></i></span>
+            <owl-date-time #dtRange3 [pickerMode]="popup"></owl-date-time>
+
+          </div>
+          <div [hidden]=Booking.roundTrip>
+            <mat-form-field class="example-full-width">
+
+              <input [min]="min" name="y" matInput placeholder="DATE"  [(ngModel)]="selectedDate"
+                [owlDateTimeTrigger]="dtRange4" [owlDateTime]="dtRange4">
+
+            </mat-form-field>
+            <span [owlDateTimeTrigger]="dtRange4"><i class="fa fa-calendar"></i></span>
+            <owl-date-time #dtRange4 [pickerMode]="popup"></owl-date-time>
+
+
+          </div>
+          <div class="form-group">
+              <ul id="menu" >
+                <li (click)="isMini()"> <button mat-stroked-button color="primary" class="btn">
+                    <!-- <div class="title">mini</div> -->
+                  <div class="icon"><img src="/assets/img/mini.png" alt="Mini"/></div>
+                  
+                <div class="price">₹<span [hidden]="!isminiprice">{{miniPrice}}</span><mat-progress-bar [hidden]="isminiprice" mode="indeterminate">
+
+                  </mat-progress-bar></div></button></li>
+                <li (click)="isSedan()"><button mat-stroked-button color="primary" class="btn">
+                    <!-- <div class="title">mini</div> -->
+                  <div class="icon"><img src="/assets/img/sedan.png" alt="Sedan"/></div>
+                  
+                <div class="price">₹<span [hidden]="!issedanprice">{{sedanPrice}}</span><mat-progress-bar [hidden]="issedanprice" mode="indeterminate">
+
+                </mat-progress-bar></div></button></li>
+                <li (click)="isSuv()"><button mat-stroked-button color="primary" class="btn">
+                    <!-- <div class="title">mini</div> -->
+                  <div class="icon"><img src="/assets/img/suv.png" alt="Suv"/></div>
+                  
+                <div class="price">₹<span [hidden]="!issuvprice">{{suvPrice}}</span><mat-progress-bar [hidden]="issuvprice" mode="indeterminate">
+
+                </mat-progress-bar></div></button></li>
+                <li (click)="isTraveller()"><button mat-stroked-button color="primary" class="btn">
+                    <!-- <div class="title">mini</div> -->
+                  <div class="icon"><img src="/assets/img/traveller.png" alt="traveller"/></div>
+                  
+                <div class="price">₹<span [hidden]="!istravellerprice">{{travellerPrice}}</span><mat-progress-bar [hidden]="istravellerprice" mode="indeterminate">
+
+                </mat-progress-bar></div></button></li>
+              </ul>
+          </div>
+          <div class="form-group">
+            <button mat-stroked-button color="primary" class="btn-block" (click)="GetRideDetails()" >RIDE
+              DETAILS</button>
+
+            <button mat-raised-button color="primary" class="btn-block"
+              (click)="GetFareDetails(Booking)">FARE DETAILS</button>
+              
+          </div>
+        </form>
+      </div>
+    
+  </div>
+  </div>
+</section>

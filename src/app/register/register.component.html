@@ -1,0 +1,35 @@
+
+<section class="banner-area relative" id="home">
+
+  <div class="overlay overlay-bg"></div>	
+  <div class="container">
+  <div class="row fullscreen d-flex align-items-center justify-content-between" id="innercontent">
+   <div class="col-lg-4  col-md-6 header-right" >
+<span>SIGN UP</span>
+
+	<form>
+		<mat-grid-list cols="1" rowHeight="70px"> <mat-grid-tile>
+		<mat-form-field class="example-full-width"> <input
+			matInput placeholder="Name" type="text" id="name"
+			[(ngModel)]="user.userName" name="name"> </mat-form-field> </mat-grid-tile> <mat-grid-tile>
+		<mat-form-field class="example-full-width"> <input
+			matInput placeholder="email" type="email" id="email"
+			[(ngModel)]="user.userEmail" name="email"> </mat-form-field> </mat-grid-tile> <mat-grid-tile>
+		<mat-form-field class="example-full-width"> <input
+			matInput placeholder="phone" type="number" id="phone"
+			[(ngModel)]="user.userPhoneNumber" name="phone"> </mat-form-field> </mat-grid-tile> <mat-grid-tile>
+		<mat-form-field class="example-full-width"> <input
+			matInput placeholder="Password" type="password" id="password"
+			[(ngModel)]="user.userPassword" name="password"> </mat-form-field> </mat-grid-tile> <mat-grid-tile>
+		<mat-form-field class="example-full-width"> <input
+			matInput placeholder="Confirm Password" type="password"
+			id="Confirmpassword" [(ngModel)]="user.userPassword" name="password">
+		</mat-form-field> </mat-grid-tile> <mat-grid-tile>
+		<button class="example-full-width" mat-raised-button  (click)="userRegistration()">Register</button>
+		</mat-grid-tile> </mat-grid-list>
+	</form>
+</div>
+</div>
+</div>
+</section>
+

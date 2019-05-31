@@ -1,0 +1,259 @@
+
+ 
+  <div class="row">
+  
+    <div class="col-12">
+      <img class="img-fluid" src="/assets/img/farelogo.PNG" alt="img">
+    </div>
+   
+  </div>
+<div class="row fare-chart">
+
+  <div class="col-6 fare-chart">
+     <span> BOOKING DETAILS</span>{{booking.id}}id
+  </div>
+</div>
+
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+<div class="row">
+<div class="col-3">
+  <span class="footing">Start:</span>
+  </div>
+  <div class="col-9">
+    <span class="footing">{{booking.ride.startRide.formattedAddress}}</span>
+    </div>
+ 
+</div>
+<div class="row">
+  <div class="col-3">
+    <span class="footing">End:</span>
+    </div>
+    <div class="col-9">
+      <span class="footing">{{booking.ride.endRide.formattedAddress}}</span>
+      </div>
+   
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <span class="footing">Distance:</span>
+      </div>
+      <div class="col-9">
+         
+        <span [hidden]="!booking.roundTrip" class="footing">{{booking.fare.totalKM}} KM </span>
+        <span [hidden]="booking.roundTrip" class="footing">{{booking.fare.totalKM}} KM</span>
+        <span> {{booking.roundTrip ? 'ROUND TRIP' : 'ONE WAY'}}</span>
+        </div>
+     
+    </div>
+   
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+
+  <div class="row">
+      <div class="col-6">
+          <span class="heading"> START:</span>
+                                                          
+      </div>
+      <div class="col-6">
+          <span class="heading">{{booking.ride.startdate | date:'M/d/yy, h:mm a'}}</span> 
+      </div>
+ 
+</div>
+<div class="row">
+    <div class="col-6">
+        <span class="footing">END:</span>
+        
+ 
+                                                        
+    </div>
+    <div class="col-6 ">
+        <span class="footing">{{booking.ride.startdate | date:'M/d/yy, h:mm a'}}</span> 
+        
+    </div>
+
+</div>
+<div class="row">
+  <div class="col-6">
+      <span class="heading">STATUS:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.status}}</span> 
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+      <span class="heading">KM OFFERED:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.fare.totalKMTravelled}}KM</span> 
+
+  </div>
+
+</div>
+
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+<div [hidden]="!booking.confirmed"><span>VEHICLE DETAILS</span>
+<div class="row">
+  <div class="col-6">
+      <span class="heading">VEHICLE TYPE:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.vehicle.carType}}</span> 
+
+  </div>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-6">
+      <span class="heading">VEHICLE REGNO:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.vehicle.regNo}}</span> 
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+      <span class="heading">DRIVER NAME:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.vehicle.driverName}}</span> 
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+      <span class="heading">CATEGORY:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.vehicle.category}}</span> 
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+      <span class="heading">FEATURE:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.vehicle.features}}</span> 
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+      <span class="heading">DRIVER NUMBER:</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <span class="heading">{{booking.vehicle.driver}}</span> 
+
+  </div>
+
+</div>
+
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+</div>
+<div class="row">
+  <div class="col-6">
+    <span class="heading">Estimated fare</span>
+    <span class="footing"> </span>
+      
+</div>
+<div class="col-6">
+    <span class="heading">₹{{booking.fare.estimatedFare}}</span> 
+<!-- <span [hidden]="!booking.confirmed"><a href="" (click)="viewFare('F')">CLICK TO VIEW DETAILED FARE</a></span> -->
+</div>
+  
+
+</div>
+<div  [hidden]="!booking.confirmed">
+  <div class="row">
+  <div class="col-12">
+    <span> <mat-form-field class="example-full-width">
+      <input *ngIf="endride" disabled  matInput placeholder="START TRIP KM" name="stk" [(ngModel)]="booking.startRideKm">
+      <input  [hidden]="!endride" matInput placeholder="START TRIP KM" name="stk" [(ngModel)]="booking.startRideKm">
+    </mat-form-field></span>
+    
+     </div> 
+</div>
+<div class="row" [hidden]="!endride">
+<div class="col-12">
+    <span> <mat-form-field class="example-full-width">
+      <input matInput placeholder="END TRIP KM" name="etk" [(ngModel)]="booking.endRideKm">
+    </mat-form-field></span> 
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+  <span > <button *ngIf="endride" hidden  mat-raised-button class="btn-block"
+    (click)="startTrip(booking)">START TRIP</button>
+    <button *ngIf="!endride" mat-raised-button class="btn-block"
+    (click)="startTrip(booking)">START TRIP</button>
+  </span> 
+
+</div>
+</div>
+<div class="row">
+    <div class="col-12">
+      <span > <button mat-raised-button class="btn-block"
+        (click)="endTrip(booking)">END TRIP</button></span> 
+    
+    </div>
+    </div>
+
+</div>
+<div class="row" >
+  <div class="form-group example-full-width col-12" >
+      <!-- <button class="btn btn-default btn-lg btn-block text-center text-uppercase" (click)="bookRide()">BOOK RIDE</button>
+     --> <div class="col-6" *ngIf="(!booking.confirmed && booking.canCancle)">
+        <button [hidden]="booking.select" mat-raised-button class="example-full-width" (click)="viewFare('F')" class="btn-block" >FARE
+          </button>
+          <button [hidden]="booking.select" mat-raised-button class="example-full-width" (click)="viewFare('R')" class="btn-block" >RIDE
+            </button>
+      <button mat-raised-button class="example-full-width" (click)="cancelRide(booking)" class="btn-block"  >CANCEL
+          </button>
+    </div><div class="col-6" *ngIf="((booking.confirmed) && booking.canCancle)">
+    AS RIDE IS CONFIRMED  CALL 8530312323 TO CANCLE 
+    </div>
+  </div>
+  
+
+  
+  
+ 
+  
+  
+</div>
+

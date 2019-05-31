@@ -1,0 +1,59 @@
+
+<section class="tab" id="">
+
+    
+    <div class="container">
+          <mat-card *ngFor="let booking of bookinglist" >
+            
+            <div class="row" (click)="open(booking)">
+             
+              
+                 <div class="col-12">
+                 
+                    <div >FROM: {{booking.ride.startRide.formattedAddress}}</div>
+                     
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col-12">
+                   
+                    <div >TO:  {{booking.ride.endRide.formattedAddress}}</div>
+                      
+                  </div>
+            </div>
+                  <div class="row">
+                    <div class="col-6">
+                      
+                      <div >STATUS:  {{booking.status}}</div>
+                        
+                    </div>
+                    <div class="col-6">
+                     
+                      <div >ID:  {{booking.id}}</div>
+                        
+                    </div>
+                    </div>
+
+
+
+
+          
+              
+            
+           
+            <div class="row">
+            <app-fare [booking]="booking" [km]="booking.fare.totalKM" [userId]="user.userId"
+            *ngIf="booking.select" class="fare col-lg-5  "></app-fare>
+            
+            
+            <app-bookingchild (fare)="openfare($event)" [booking]="booking" 
+            *ngIf="booking.select" class="fare col-lg-7 "></app-bookingchild>
+            </div>
+          </mat-card>
+          
+         
+  </div>
+  
+  </section>
+  
+  

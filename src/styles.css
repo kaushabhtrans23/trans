@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/css/animate.min.css';
+@import 'assets/css/bootstrap.css';
+@import 'assets/css/font-awesome.css';
+@import 'assets/css/jquery-ui.css';
+@import 'assets/css/linearicons.css';
+@import 'assets/css/magnific-popup.css';
+@import 'assets/css/main.css';
+@import 'assets/css/nice-select.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+
+body { 
+      font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+.fare[_ngcontent-c5]{
+  margin-bottom: 68px;
+}
+
+.mat-select-panel:not([class*=mat-elevation-z]){
+  transform-origin: 50% 23.8889px 0px;
+  font-size: 16px;
+  opacity: 1;
+  min-width: calc(100% + 32px);
+  transform: scaleY(1);
+  margin-left: 67px;
+  margin-top: 43px;
+  background-color: white;
+}
+
+.mat-card:not([class*=mat-elevation-z]){
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: 10px;
+  padding-bottom: 0px;
+ 
+  width: -webkit-fill-available;
+}
+.banner-content[_ngcontent-c5]{
+padding-left:0px;
+padding-right: 0px;
+}
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #6A1B9A;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #6A1B9A;
+}
+.mat-chip-list-wrapper .mat-standard-chip, .mat-chip-list-wrapper input.mat-input-element {
+  border-radius: 10px;
+
+}
+@media (max-width: 991px) {
+  #mobile {
+    display: block;
+  }
+}
+@media (min-width: 991px) {
+#mobile{
+ display: none;
+}
+}
+/* .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle , .mat-radio-outer-circle {
+  border-color: #6A1B9A !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  background-color: #6A1B9A !important;
+} */
+
+/* You can add global styles to this file, and also import other style files */

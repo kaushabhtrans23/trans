@@ -1,0 +1,185 @@
+<section class="relative zindex">
+<mat-tab-group>
+        <mat-tab label="ALL BOOKING">
+          <section class="tab" id="">
+
+    
+            <div class="container">
+                  <mat-card *ngFor="let booking of bookinglist">
+                    <div class="row">
+                      <div class="col-2">
+                       START:{{booking.ride.startdate | date:'M/d/yy, h:mm a'}}<br>
+                       END: {{booking.ride.startdate | date:'M/d/yy, h:mm a'}}<br>
+                       {{booking.roundTrip ? 'ROUND TRIP' : 'ONE WAY'}}
+                      </div>
+                      <div class="col-10">
+                        <div class="row">
+                         <div class="col-6">
+                          <div class="row">
+                            <div class="col-12">FROM: {{booking.ride.startRide.formattedAddress}}</div>
+                            <div class="col-12">STATUS: {{booking.status}}</div>
+                            <div class="col-12">BOOKING ID: {{booking.id}}</div>
+                            <div class="col-12">KM OFFERED: {{booking.fare.totalKM}}</div>
+                            <div [hidden]="!booking.confirmed">
+                            <div class="col-12">VEHICLE TYPE: {{booking.vehicle.carType}}</div>
+                            <div class="col-12">VEHICLE REGNO: {{booking.vehicle.regNo}}</div>
+                            <div class="col-12">DRIVER NAME: {{booking.vehicle.driverName}}</div>
+                            </div>
+                          </div>
+                         </div>
+                          <div class="col-6">
+                           <div class="row">
+                            <div class="col-12">TO:  {{booking.ride.endRide.formattedAddress}}</div>
+                            <div class="col-12">BOOKING DATE: {{booking.bookingDate | date:'M/d/yy, h:mm a'}}</div>
+                            <div class="col-12">ESTIMATED FARE: {{booking.fare.estimatedFare}}</div>
+                            <div [hidden]="!booking.confirmed">
+                            <div class="col-12">CATEGORY: {{booking.vehicle.category}}</div>
+                            <div class="col-12">FEATURE: {{booking.vehicle.features}}</div>
+                            <div class="col-12">DRIVER NUMBER: {{booking.vehicle.driver}}</div>
+                            </div>
+                          </div>
+                         </div>
+                        </div>
+        
+        
+        
+        
+                      </div>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-6"></div>
+                      <div class="col-6">
+                        ENTER VEHICLE REG NO.  <input type="text" name="confirm" >
+                        <button>CONFIRM RIDE</button>
+                        <button>EDIT</button>
+                      </div>
+                    </div>
+                  </mat-card>
+                 
+          </div>
+          
+          </section>
+          
+          
+        </mat-tab>
+
+
+        <mat-tab label="ALL VEHICLE"> 
+          <section class="tab" id="">
+              <div class="container">
+                      
+                    <mat-card *ngFor="let vehicle of vehiclelist;let index=index;">
+                      <div class="row">
+                        <div class="col-2">
+                        {{vehicle.regNo}}
+                        </div>
+                        <div class="col-10">
+                          <div class="row">
+                           <div class="col-6">
+                            <div class="row">
+                              <div class="col-12">DRIVER PHONE: {{vehiclelist[index].driver}}</div>
+                              <div class="col-12">DRIVER ID PROOF: {{vehiclelist[index].idProof}}</div>
+                              <div class="col-12">CAR TYPE {{vehiclelist[index].carType}}</div>
+                              <div class="col-12">FARE PER KM: {{vehiclelist[index].farePerKm}}</div>
+                              
+                            </div>
+                           </div>
+                            <div class="col-6">
+                             <div class="row">
+                                <div class="col-12">OFFERING SEATS: {{vehiclelist[index].offeringSeats}}</div>
+                                <div class="col-12">CATEGORY: {{vehiclelist[index].category}}</div>
+                              <div class="col-12">FEATURES:  {{vehiclelist[index].features}}</div>
+                                 </div>
+                           </div>
+                          </div>
+          
+          
+          
+          
+                        </div>
+                        
+                      </div>
+                      <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6">
+                       <div [hidden]="confirmed"> ENTER VEHICLE BOOKING ID.  <input type="text" [(ngModel)]="bookingId" name="confirm" >
+                          <button (click)="confirmBooking(vehicle);">CONFIRM RIDE</button>' </div>
+                          <div>
+                          <button [hidden]="!confirmed" (click)="editConfirm(booking);">EDIT</button>
+                        </div>
+                        </div>
+                      </div>
+                    </mat-card>
+                   
+            </div>
+            
+            </section> </mat-tab>
+
+            <mat-tab label="ADD VEHICLE"> 
+              <section class="tab" id="">
+                  <div class="container">
+                          
+                        <mat-card>
+                          <div class="row">
+                            <div class="col-2">
+                            ADD VEHICLE
+                            </div>
+                            <div class="col-10">
+                              <div class="row">
+                               <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12">Vehicle Regno:<input type="text" [(ngModel)]="vehicle.regNo" name="reg"></div>
+                                    <div class="col-12">OWNER PHONE:<input type="text" [(ngModel)]="vehicle.owner" name="owner"></div>
+                                    <div class="col-12">OWNER NAME:<input type="text" [(ngModel)]="vehicle.ownerName" name="ownername"></div>
+                                    <div class="col-12">DRIVER NAME:<input type="text" [(ngModel)]="vehicle.driverName" name="owner"></div>
+                                    
+                                    <div class="col-12">DRIVER PHONE:<input type="text" [(ngModel)]="vehicle.driver" name="driver"></div>
+                                    <div class="col-12">DRIVER ID PROOF:<input type="text" [(ngModel)]="vehicle.idProof" name="idproof"></div>
+                                    <div class="col-12">CAR TYPE:<input type="text" [(ngModel)]="vehicle.carType" name="cartype"></div>
+                                    <div class="col-12">FARE PER KM:<input type="text" [(ngModel)]="vehicle.farePerKm" name="fpk"></div>
+                                    <div class="col-12">OFFERING SEATS:<input type="text" [(ngModel)]="vehicle.offeringSeats" name="offerseats"></div>
+                                    <div class="col-12"> 
+                                      <div class="default-select" id="default-select">
+                                          <select name="select" matNativeControl [(ngModel)]="vehicle.category">
+                                            <option value="" disabled selected hidden>SELECT VEHICLE CATEGORY</option>
+                                            <option value="MINI">MINI</option>
+                                            <option value="SEDAN">SEDAN</option>
+                                            <option value="SUV">SUV</option>
+                                            <option value="TRAVELLER">TRAVELLER</option>
+                                            <option value="PACKERSMOVERS">PACKERS & MOVERS</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                  <div class="col-12">FEATURES:  <input type="text" [(ngModel)]="vehicle.features" name=""></div>
+                              
+                                   </div>
+                               </div>
+                                
+                              </div>
+              
+              
+              
+              
+                            </div>
+                            
+                          </div>
+                          <div class="row">
+                            <div class="col-6"></div>
+                            <div class="col-6">
+                             
+                              <button (click)="addVehicle(vehicle)">ADD VEHICLE</button>
+                              <button>EDIT</button>
+                            </div>
+                          </div>
+                        </mat-card>
+                       
+                </div>
+                
+                </section></mat-tab>
+      
+
+      </mat-tab-group>
+</section>
+      
+      

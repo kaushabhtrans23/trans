@@ -1,0 +1,130 @@
+
+ 
+  <div class="row">
+  
+    <div class="col-12">
+      <img class="img-fluid" src="/assets/img/farelogo.PNG" alt="img">
+    </div>
+   
+  </div>
+<div class="row fare-chart">
+
+  <div class="col-6 fare-chart">
+     <span> FARE CHART</span>
+  </div>
+</div>
+
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+<div class="row">
+<div class="col-3">
+  <span class="footing">Start:</span>
+  </div>
+  <div class="col-9">
+    <span class="footing">{{booking.ride.startRide.formattedAddress}}</span>
+    </div>
+ 
+</div>
+<div class="row">
+  <div class="col-3">
+    <span class="footing">End:</span>
+    </div>
+    <div class="col-9">
+      <span class="footing">{{booking.ride.endRide.formattedAddress}}</span>
+      </div>
+   
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <span class="footing">Distance:</span>
+      </div>
+      <div class="col-9">
+         
+      <!-- <span [hidden]="!booking.roundTrip" class="footing">{{km}} KM  ({{km/2}}X2)</span> -->
+        <span [hidden]="booking.roundTrip" class="footing">{{km}} KM</span>
+        </div>
+     
+    </div>
+  
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+<div class="row">
+  <div class="col-6">
+   <span class="heading">Base fare</span>
+   <span class="footing">({{booking.fare.totalKMTravelled}}km X ₹{{rateperkm}})</span>
+  </div>
+  <div class="col-6 ">
+    <!-- <span class="heading ">₹{{booking.fare.totalKMTravelled*rateperkm}}</span> -->
+  </div>
+</div>
+
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+  <div class="row">
+      <div class="col-6">
+          <span class="heading">Taxes & fees</span>
+                                                          
+      </div>
+      <div class="col-6">
+          <span class="heading">₹{{booking.fare.driverAllowance}}</span> 
+      </div>
+ 
+</div>
+<div class="row">
+    <div class="col-6">
+        <span class="footing">Driver allowance</span>
+        <span class="footing"> </span>
+        <span class="heading small"> Taxes are included in base fare</span>
+ 
+                                                        
+    </div>
+    <div class="col-6 ">
+        <span class="footing">₹{{booking.fare.driverAllowance}}</span>
+        <span class="footing small">(₹{{allowanceperday}} X {{numberOfDays}})</span> 
+    </div>
+
+</div>
+<div class="row">
+  <div class="col-6">
+      <span class="heading">Estimated fare</span>
+      <span class="footing"> </span>
+        
+  </div>
+  <div class="col-6">
+      <!-- <span class="heading">₹{{booking.fare.totalKMTravelled*rateperkm + booking.fare.driverAllowance}}</span>  -->
+
+  </div>
+
+</div>
+
+<mat-divider style="margin-bottom:5px;"></mat-divider>
+
+<div class="row">
+<div class="col-6">
+  <span class="heading">Fare rules</span> 
+
+</div>
+<div class="col-12">
+<ul>
+  <li class="footing small">No additional hours will be charged.</li>
+  <li class="footing small">Excludes parking fee and Toll Cost.</li>
+  <li class="footing small">₹ 10/km will be charged for extra km.</li>
+</ul>
+
+</div>
+</div>
+<div class="row" [hidden]="booking.select">
+  <div class="form-group example-full-width col-12">
+      <!-- <button class="btn btn-default btn-lg btn-block text-center text-uppercase" (click)="bookRide()">BOOK RIDE</button>
+     --> <button mat-raised-button class="btn-block" 
+      (click)="bookRide()">BOOK RIDE</button>
+  </div>
+  
+
+  
+  
+ 
+  
+  
+</div>
+

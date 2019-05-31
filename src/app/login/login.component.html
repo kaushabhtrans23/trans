@@ -1,0 +1,31 @@
+
+<section class="banner-area relative" id="home">
+
+    <div class="overlay overlay-bg"></div>	
+    <div class="container">
+    <div class="row fullscreen d-flex align-items-center justify-content-between" id="innercontent">
+     <div class="col-lg-4  col-md-6 header-right" >
+  
+  
+  <span>SIGN IN</span>
+    <form>
+
+      <mat-grid-list cols="1" rowHeight="70px">  <mat-grid-tile>
+      <mat-form-field class="example-full-width"> <input
+        matInput placeholder="phone" type="text" id="phone"
+        [(ngModel)]="user.userName" name="phone"> </mat-form-field> </mat-grid-tile> <mat-grid-tile>
+      <mat-form-field [hidden]="passwordReset" class="example-full-width"> <input
+        matInput placeholder="Password" type="password" id="password"
+        [(ngModel)]="user.userPassword" name="password"> </mat-form-field> </mat-grid-tile> <mat-grid-tile>
+      <button class="example-full-width" mat-raised-button  [hidden]="passwordReset" (click)="login()">Login</button>
+      </mat-grid-tile> </mat-grid-list>
+    </form>
+    <a class="menu-active" [hidden]="passwordReset"  style="color:black" routerLink="/register" routerLinkActive="active">CLICK FOR QUICK SIGN UP</a><br>
+    <a style="cursor: pointer;" class="menu-active" [hidden]="passwordReset"  style="color:black"  routerLinkActive="active"  (click)="resetPassword()">RESET PASSWORD</a>
+    <button [hidden]="!passwordReset" class="example-full-width" mat-raised-button  (click)="getNewPassword(user.userName)">GET PASSWORD</button>
+  </div>
+  </div>
+  </div>
+  </section>
+  
+  
